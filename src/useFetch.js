@@ -6,7 +6,11 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(url)
+        fetch(url, {
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
             .then(res => {
                 if (!res.ok) {
                     throw Error('fetching error');
@@ -14,14 +18,15 @@ const useFetch = (url) => {
                 return res.json();
             })
             .then(data => {
-                setData(data)
+                setData(data.record || data)
                 setLoading(false)
             })
             .catch(err => {
                 setLoading(false);
                 setError(err.message);
             })
-    }, [url]);
+    },
+        [url]);
 
     return { data, isLoading, error };
 }

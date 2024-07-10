@@ -4,14 +4,13 @@ import { useNavigate } from "react-router-dom";
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('');
+    const [author, setAuthor] = useState('Magnus Carlsen');
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const blog = { title, body, author };
-
-        fetch('http://localhost:8000/blogs', {
+        fetch('http://localhost:8000/blogs/', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(blog)
@@ -27,8 +26,8 @@ const Create = () => {
                 required
                 value={title}
                 onChange={(e) => setTitle(e.target.value)} />
-            <label >Blog body</label>
-            <textarea
+            <label >Blog content:</label>
+            <textarea className="textarea"
                 required
                 value={body}
                 onChange={(e) => setBody(e.target.value)} >

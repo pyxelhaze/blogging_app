@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 
-const Bloglist = ({ blogs, title }) => {
+
+const Bloglist = ({ blogs }) => {
 
     return (
         <div className="bloglist">
-            <h2>{title}</h2>
+
             {
                 blogs.map((blog) => (
                     <div className="blog-preview" key={blog.id}>
