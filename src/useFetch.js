@@ -6,11 +6,7 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(url, {
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
+        fetch(url)
             .then(res => {
                 if (!res.ok) {
                     throw Error('fetching error');

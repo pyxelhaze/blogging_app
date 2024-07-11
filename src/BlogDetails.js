@@ -6,7 +6,7 @@ import useFetch from "./useFetch";
 
 const BlogDetails = () => {
     const { id } = useParams();
-    const { data, error, isLoading } = useFetch('http://localhost:8000/blogs' + id)
+    const { data, error, isLoading } = useFetch('http://localhost:8000/blogs/' + id)
     const navigate = useNavigate();
 
     const handleClick = () => {
