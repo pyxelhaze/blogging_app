@@ -3,14 +3,15 @@ import { useNavigate } from "react-router-dom";
 import useFetch from "./useFetch";
 
 
-
 const BlogDetails = () => {
     const { id } = useParams();
-    const { data, error, isLoading } = useFetch('http://localhost:8000/blogs/' + id)
     const navigate = useNavigate();
+    const { data, error, isLoading } = useFetch(`https://blogging-point-server.onrender.com/blogs/${id}`)
+
+
 
     const handleClick = () => {
-        fetch('http://localhost:8000/blogs/' + data.id, {
+        fetch(`https://blogging-point-server.onrender.com/blogs/${data.id}`, {
             method: 'DELETE'
         }).then(() => { navigate('/'); })
     }

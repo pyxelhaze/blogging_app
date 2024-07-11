@@ -6,6 +6,7 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        console.log('Fetching from URL:', url);
         fetch(url)
             .then(res => {
                 if (!res.ok) {
