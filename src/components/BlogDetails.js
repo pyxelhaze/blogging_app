@@ -13,7 +13,7 @@ const BlogDetails = () => {
     const handleClick = () => {
         fetch(`https://blogging-point-server.onrender.com/blogs/${data.id}`, {
             method: 'DELETE'
-        }).then(() => { navigate('/'); })
+        }).then(() => { navigate('/') })
     }
 
     return (<div className="blog-details">

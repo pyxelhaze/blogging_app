@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './Header';
-import Main from './Main';
-import Create from './Create';
-import BlogDetails from './BlogDetails';
-import Errorpage from './Erorrpage';
+import Header from './components/Header';
+import Main from './components/Main';
+import Create from './components/Create';
+import BlogDetails from './components/BlogDetails';
+import Errorpage from './components/Erorrpage';
+import Footer from './components/Footer';
 import './index.css';
-
-
 
 
 function App() {
@@ -34,6 +33,7 @@ function App() {
             </Route>
           </Routes>
         </div>
+        <Footer />
       </div>
     </Router>
   );
