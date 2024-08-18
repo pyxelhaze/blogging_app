@@ -2,7 +2,7 @@ import Bloglist from './Bloglist';
 import useFetch from './useFetch';
 
 const Main = () => {
-    const { data, isLoading, error } = useFetch('https://blogging-point-server.onrender.com/blogs')
+    const { data, isLoading, error } = useFetch('https://blogging-point-server-0v9e.onrender.com/blogs')
 
     return (
         <div className="blog-list">

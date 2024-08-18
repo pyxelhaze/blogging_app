@@ -6,12 +6,12 @@ import useFetch from "./useFetch";
 const BlogDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { data, error, isLoading } = useFetch(`https://blogging-point-server.onrender.com/blogs/${id}`)
+    const { data, error, isLoading } = useFetch(`https://blogging-point-server-0v9e.onrender.com/blogs/${id}`)
 
 
 
     const handleClick = () => {
-        fetch(`https://blogging-point-server.onrender.com/blogs/${data.id}`, {
+        fetch(`https://blogging-point-server-0v9e.onrender.com/blogs/${data.id}`, {
             method: 'DELETE'
         }).then(() => { navigate('/') })
     }
